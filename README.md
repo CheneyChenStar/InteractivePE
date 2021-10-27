@@ -4,7 +4,7 @@
 
 项目中的类设计实现思路，参考了[secana](https://github.com/secana)的[PeNet](https://github.com/secana/PeNet)项目。本项目出于学习的目的，精简和抛弃了许多不利于学习的额外功能和设计，也力图将PeNet设计中良好的可扩展性保留下来，为后续深入扩展功能提供基础。目前正在快速更新中。
 
-## 项目结构
+## 项目设计
 
 TODO
 
