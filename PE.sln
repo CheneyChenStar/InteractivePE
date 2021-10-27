@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PETest", "PE\PETest.csproj", "{6E1FAA01-A5BA-46C6-9B8F-FE9B9115D52C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PEParser", "PEParser\PEParser.csproj", "{A3F77E17-D084-45F1-A434-A0967BDF9889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PE", "PEParser\PE.csproj", "{A3F77E17-D084-45F1-A434-A0967BDF9889}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
