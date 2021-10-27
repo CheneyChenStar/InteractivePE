@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PEParser": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\cxing\\source\\repos\\PE\\PE\\bin\\Debug\\net5.0\\PETest.exe",
+      "sqlDebugging": false,
+      "nativeDebugging": false
+    }
+  }
+}
