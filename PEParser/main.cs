@@ -118,10 +118,11 @@ namespace PEParser
         {
             int off = (int)ReadDword(0x3c) + 0x18;
             off += IsPe32 ? 96 : 112;
-            ImageDataDirectory[] directories = new ImageDataDirectory[16];
-            for (int i = 0; i < 16; i++)
+            int numberOfdirectories = (int)ReadDword(off - 4);
+            ImageDataDirectory[] directories = new ImageDataDirectory[numberOfdirectories];
+            for (int i = 0; i < numberOfdirectories; i++)
             {
-                directories[i] = new ImageDataDirectory(this, off + i * 8);
+                directories[i] = new ImageDataDirectory(this, off + i * 8, i);
             }
             return directories;
         }
@@ -972,11 +973,31 @@ namespace PEParser
 
     public class ImageDataDirectory : APEStructure
     {
-        public ImageDataDirectory(IPeParser peParser, int offset)
+        public ImageDataDirectory(IPeParser peParser, int offset, int number)
             : base(peParser, offset)
         {
-
+            DataName = number switch
+            {
+                0 => "Export Table Directory",
+                1 => "Import Table Directory",
+                2 => "Resource Table Directory",
+                3 => "Exception Table Directory",
+                4 => "Certificate Table Directory",
+                5 => "Base Relocation Table Directory",
+                6 => "Debug Directory",
+                7 => "Architecture Directory",
+                8 => "Global Ptr Directory(Reserved)",
+                9 => "TLS Table Directory",
+                10 => "Configuration table Directory",
+                11 => "Bound Import Directory",
+                12 => "IAT Directory",
+                13 => "Delay Import Descriptor",
+                14 => "CLR Runtime Header Directory",
+                15 => "Reserved",
+                _  => "Reserved"
+            };
         }
+        public string DataName { get; }
         public uint VirtualAddress
         {
             get
